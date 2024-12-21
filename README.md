@@ -4,6 +4,7 @@ Chakri koi is an one stop solution to make your job search a bit easier. Add res
 > [!NOTE]
 > The software is still work in progress and not ready for public usage.
 
+![](assets/screenshot-job-match.png)
 ## Synopsis
 Every month I have to search career website of at least 20+ companies to find suitable jobs for myself. On average I have to search more than 50 jobs per company and select 3-5 jobs most suitable. It's very time consuming and repetative. Hence, the idea of chakri koi?
 

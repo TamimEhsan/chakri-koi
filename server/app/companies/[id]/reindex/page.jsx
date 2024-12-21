@@ -15,6 +15,21 @@ export default function Reindex({ params }) {
   }
 
   useEffect(() => {
+
+    // create a post api call to the server
+    fetch(`/api/companies/${params.id}/reindex`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ companyId: company.id }),
+    })
+      .then(response => response.json())
+      .then(data => {
+        console.log(data)
+      })
+
+
     // Simulate indexing process
     const interval = setInterval(() => {
       setProgress(prev => {
