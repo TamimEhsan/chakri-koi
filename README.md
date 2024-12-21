@@ -57,10 +57,10 @@ You can find your app running at `localhost:3000`
 
 ## 🚨 Caution
 
-### 🛂 Respect robots.txt
+### Respect robots.txt
 Not every website allow scraping. See the allowed list of sites for scraping and the rate from their robots.txt file
 
-### 🦺 Breaking scraping
+### Breaking scraping
 Getting the right css selector is very tough. I am working to make it better. Currently I only added the capability to scrap paginated sites. Will make it more universal may be someday.
 
 ## Conclusion
