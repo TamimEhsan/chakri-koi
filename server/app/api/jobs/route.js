@@ -1,7 +1,7 @@
 import pool from '@/lib/db';
 import * as cheerio from 'cheerio';
 import { NextResponse } from 'next/server';
-
+import fs from 'fs';
 export async function POST(request) {
   let body = await request.json()
 
@@ -21,9 +21,13 @@ export async function POST(request) {
         body = await parseLink(body);
     }
     console.log(body.title, body.location, body.experience);
-    
-    const query = `INSERT INTO public."job" (company_id, title, location, experience, tags, content) VALUES ($1, $2, $3, $4, $5, $6) RETURNING *`;
-    const values = [body.company_id, body.title, body.location, body.experience, body.tags, body.content];
+    // save the job to the file system
+    fs.writeFileSync('job.txt', body.content);
+
+    return NextResponse.json({ message: 'Data received successfully' });
+    let embedding = await getEmbedding(body.content);
+    const query = `INSERT INTO public."job" (company_id, title, location, experience, tags, content, embedding) VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING *`;
+    const values = [body.company_id, body.title, body.location, body.experience, body.tags, body.content, embedding];
     await pool.query(query, values);
 	
     return NextResponse.json({ message: 'Data received successfully' })
@@ -53,3 +57,17 @@ async function parseLink(body) {
     
     return body;
 }
+
+async function getEmbedding(content) {
+    const response = await fetch('http://localhost:8000/encode', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ text: content })
+    });
+    const data = await response.json();
+    let embedding = data.embedding.join(',');
+    embedding = `[${embedding}]`;
+    return embedding;
+  }

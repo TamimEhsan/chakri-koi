@@ -23,12 +23,14 @@ export async function POST(req, { params }) {
 }
 
 async function reIndex(company) {
-    let query = `UPDATE public."company" SET indexing = true WHERE id = $1 AND indexing == false RETURNING *`;
-    let values = [id];
-    let res = await pool.query(query, values).rows;
-    if( !res || res.length !== 0) {
+    let query = `UPDATE public."company" SET indexing = true WHERE id = $1 AND indexing = false RETURNING *`;
+    let values = [company.id];
+    let res = (await pool.query(query, values)).rows;
+    console.log("Hello", res.length);
+    if( !res || res.length === 0) {
         return;
     }
+    console.log("Indexing company", company.name);
     // console.log(company);
     // return;
     const pagesToIndex = [];
@@ -37,6 +39,7 @@ async function reIndex(company) {
     // Start with the company's start URL
     for( let i=1; ;i++){
         const pageLink = `${company.start_url}${i}`;
+        console.log("Fetching page", pageLink);
         const { page, error } = await fetchPage(pageLink);
         if( error ) {
             console.log("Error fetching page", error);
@@ -73,7 +76,7 @@ async function reIndex(company) {
     }
     console.log("Indexing complete");
     query = `UPDATE public."company" SET indexing = false WHERE id = $1 RETURNING *`;
-    values = [id];
+    values = [company.id];
     await pool.query(query, values).rows;
 }
 
@@ -127,9 +130,9 @@ async function saveJob(job, company) {
     if( res.length > 0 ) {
         return;
     }
-
-    query = `INSERT INTO public."job" (title, location, experience, content, link, company_id) VALUES ($1, $2, $3, $4, $5, $6) RETURNING *`;
-    values = [job.title, job.location, job.experience, job.content, job.link, company.id];
+    let embedding = await getEmbedding(job.content);
+    query = `INSERT INTO public."job" (title, location, experience, content, link, embedding, company_id) VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING *`;
+    values = [job.title, job.location, job.experience, job.content, job.link, embedding, company.id];
     const { rows } = await pool.query(query, values);
     return rows;
 }
@@ -147,4 +150,18 @@ export async function GET(req, { params }) {
     const { rows } = await pool.query(query, values);
     
     return NextResponse.json(rows);
+}
+
+async function getEmbedding(content) {
+    const response = await fetch('http://localhost:8000/encode', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ text: content })
+    });
+    const data = await response.json();
+    let embedding = data.embedding.join(',');
+    embedding = `[${embedding}]`;
+    return embedding;
 }

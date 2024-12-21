@@ -6,9 +6,9 @@ import pool from '@/lib/db'
 export async function GET(req, { params }) {
     const { id } = params;
 
-  if (!id) {
-    return NextResponse.json({ error: 'ID is required' }, { status: 400 });
-  }
+    if (!id) {
+        return NextResponse.json({ error: 'ID is required' }, { status: 400 });
+    }
     console.log('GET')
     const query = `SELECT * FROM public."resume" WHERE id = $1`;
     const values = [id];
@@ -24,11 +24,28 @@ export async function PUT(req, { params }) {
     if (!id) {
         return NextResponse.json({ error: 'ID is required' }, { status: 400 });
     }
-    // console.log('PUT')
-    // console.log(body)
-    // return NextResponse.json({ message: 'Data received successfully' });
-    const query = `UPDATE public."resume" SET name = $1, role = $2, tags = $3, content = $4 WHERE id = $5 RETURNING *`;
-    const values = [body.name, body.role, body.tags, body.content, id];
+
+    let embedding = await getEmbedding(body.content);
+
+    const query = `UPDATE public."resume" SET name = $1, role = $2, tags = $3, content = $4, embedding = $5 WHERE id = $6 RETURNING *`;
+    const values = [body.name, body.role, body.tags, body.content, embedding, id];
     const { rows } = await pool.query(query, values);
-    return NextResponse.json(rows);
+    if (!rows || rows.length === 0) {
+        return NextResponse.json({ error: 'Data not found' }, { status: 404 });
+    }
+    return NextResponse.json({ message: 'Data updated successfully' });
+}
+
+async function getEmbedding(content) {
+    const response = await fetch('http://localhost:8000/encode', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ text: content })
+    });
+    const data = await response.json();
+    let embedding = data.embedding.join(',');
+    embedding = `[${embedding}]`;
+    return embedding;
 }

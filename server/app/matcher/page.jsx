@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Checkbox } from "@/components/ui/checkbox"
 import { Label } from "@/components/ui/label"
+import { useEffect, useState } from 'react'
 
 export default function Matcher() {
   // const [selectedCompanies, setSelectedCompanies] = useState([])
@@ -13,11 +14,17 @@ export default function Matcher() {
   // const [selectedRoles, setSelectedRoles] = useState([])
 
   // Mock data for matches
-  const matches = [
-    { id: 1, company: 'TechCorp', job: 'Software Engineer', role: 'Frontend', resume: 'John Doe', matchPercentage: 95 },
-    { id: 2, company: 'DataInc', job: 'Data Analyst', role: 'Analytics', resume: 'Jane Smith', matchPercentage: 88 },
-    { id: 3, company: 'DesignHub', job: 'UI/UX Designer', role: 'Design', resume: 'Mike Johnson', matchPercentage: 92 },
-  ]
+  const [matches, setMatches] = useState([])
+  useEffect(() => {
+    fetch('/api/matcher')
+      .then(response => response.json())
+      .then(data => setMatches(data))
+  }, [])
+  // const matches = [
+  //   { id: 1, company: 'TechCorp', job: 'Software Engineer', role: 'Frontend', resume: 'John Doe', matchPercentage: 95 },
+  //   { id: 2, company: 'DataInc', job: 'Data Analyst', role: 'Analytics', resume: 'Jane Smith', matchPercentage: 88 },
+  //   { id: 3, company: 'DesignHub', job: 'UI/UX Designer', role: 'Design', resume: 'Mike Johnson', matchPercentage: 92 },
+  // ]
 
   return (
     <div className="flex flex-col md:flex-row gap-8">
@@ -76,24 +83,31 @@ export default function Matcher() {
         <h1 className="text-3xl font-bold mb-6">Matcher</h1>
         <div className="space-y-4">
           {matches.map(match => (
-            <Card key={match.id}>
-              <CardContent className="flex justify-between items-center p-6">
-                <div>
-                  <h2 className="text-xl font-semibold">{match.company} - {match.job}</h2>
-                  <p className="text-muted-foreground">Role: {match.role}</p>
-                  <p className="text-muted-foreground">Resume: {match.resume}</p>
-                  <p className="text-muted-foreground">Match: {match.matchPercentage}%</p>
-                </div>
-                <div className="space-x-2">
-                  <Button asChild variant="outline">
-                    <Link href={`/resumes/${match.resume}`}>View Resume</Link>
-                  </Button>
-                  <Button asChild>
-                    <Link href={`https://google.com`} target="_blank" rel="noopener noreferrer">View Job</Link>
-                  </Button>
-                </div>
-              </CardContent>
-            </Card>
+            <>
+            <h2 key={match.id} className="text-xl font-semibold"> 
+              {match.role}
+            </h2>
+            {match.jobs.map(job => (
+                <Card key={match.id}>
+                <CardContent className="flex justify-between items-center p-6">
+                  <div>
+                    <h2 className="text-xl font-semibold">{job.title}</h2>
+                    <p className="text-muted-foreground">Company: {job.name}</p>
+                    <p className="text-muted-foreground">Location: {job.location}</p>
+                    <p className="text-muted-foreground">Match: {(job.similarity * 100).toFixed(2)}%</p>
+                  </div>
+                  <div className="space-x-2">
+                    <Button asChild variant="outline">
+                      <Link href={`/resumes/${match.id}`}>View Resume</Link>
+                    </Button>
+                    <Button asChild>
+                      <Link href={`https://google.com`} target="_blank" rel="noopener noreferrer">View Job</Link>
+                    </Button>
+                  </div>
+                </CardContent>
+              </Card>
+              ))}
+              </>
           ))}
         </div>
       </main>

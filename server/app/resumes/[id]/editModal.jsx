@@ -36,6 +36,7 @@ const EditResumeDialog = ({ isEditModalOpen, setIsEditModalOpen, resume }) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setIsEditModalOpen(false);
     try {
       const response = await fetch(`/api/resumes/${resume.id}`, {
         method: 'PUT',
@@ -50,7 +51,6 @@ const EditResumeDialog = ({ isEditModalOpen, setIsEditModalOpen, resume }) => {
 
       if (response.ok) {
         console.log('Resume updated successfully!');
-        setIsEditModalOpen(false);
         router.refresh(); // Reload the current page
       } else {
         console.error('Failed to update resume');
