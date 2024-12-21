@@ -1,0 +1,27 @@
+At Optimizely, we're on a mission to help people unlock their digital potential. We do that by reinventing how marketing and product teams work to create and optimize digital experiences across all channels. With Optimizely One, our industry-first operating system for marketers, we offer teams flexibility and choice to build their stack their way with our fully SaaS, fully decoupled, and highly composable solution.  
+
+We are proud to help more than 10,000 businesses, including H&M, PayPal, Zoom, and Toyota, enrich their customer lifetime value, increase revenue and grow their brands. Our innovation and excellence have earned us numerous recognitions as a leader by industry analysts such as Gartner, Forrester, and IDC, reinforcing our role as a trailblazer in MarTech. 
+
+ 
+
+At our core, we believe work is about more than just numbers -- it's about the people. Our culture is dynamic and constantly evolving, shaped by every employee, their actions and their stories. With over 1500 Optimizers spread across 12 global locations, our diverse team embodies the "One Optimizely" spirit, emphasizing collaboration and continuous improvement, while fostering a culture where every voice is heard and valued. 
+Introduction
+
+As a Site Reliability Engineer (SRE) I at Optimizely, you will play a vital role in ensuring the reliability, scalability, and performance of our products. Our ideal candidate is at the start of their career and has a good conceptual understanding of SRE principles and operational concepts, typically derived from an undergrad degree, work in a related field, or an extended period of self-learning. SRE I’s can take on well-scoped improvements, tasks of larger projects, or specific bugs and deliver on time and with high quality. They may require guidance from more experienced engineers and feel comfortable seeking help. They can collaborate well within their team and are receptive to feedback. They demonstrate an appreciation for good operational practices and are quick to pick up Optimizely’s processes and software design patterns. The emphasis for our SRE I engineers is on growth: developing SRE skills, gaining familiarity with Optimizely product and engineering processes, learning Optimizely’s products, and beginning to master their technical or product area of focus. 
+Job Responsibilities
+
+    Able to take on well-scoped improvements or tasks that are part of a larger project, with occasional support, and complete it within a reasonable amount of time. 
+    Capable of implementing fixes for well defined, low complexity bugs. 
+    Able to follow department and team processes such as issue tracking, source control, code review, coding standards, monitoring and logging standards, agile planning, incident, change management, maintaining and creating system documentation. 
+
+Knowledge and Experience
+
+    Good conceptual understanding of SRE principles and operational concepts and can apply these in their daily work. 
+    Proficient in at least one programming or scripting language, paradigm and/or framework. 
+    Knowledge of system lifecycle management (automated and manual, security fundamentals, and build/deploy pipelines. 
+
+Education
+
+Bachelor’s Degree (Computer Science or engineering preferred) or equivalent work experience
+
+Optimizely is committed to a diverse and inclusive workplace. Optimizely is an equal opportunity employer and does not discriminate on the basis of race, national origin, gender, gender identity, sexual orientation, protected veteran status, disability, age, or other legally protected status.

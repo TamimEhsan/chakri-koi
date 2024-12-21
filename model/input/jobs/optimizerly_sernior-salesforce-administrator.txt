@@ -1,0 +1,65 @@
+Introduction
+
+Optimizely is seeking a Senior Salesforce Administrator who will report to the Director of Business Enablement, Information Technology. This role will primarily work with the Sales Operations team as well as other departmental system administrators of enterprise software applications. 
+
+This role will ensure that Optimizely’s Salesforce instance is both scalable and meeting the needs of the business operations. You will have extensive experience designing and implementing enterprise features in Salesforce. You will collaborate with sales operations managers, business systems analysts, and system admins to design and implement solutions to business problems. You will champion the best practice usage of the system and its integrations with other systems like NetSuite, Gainsight, Conga, and Marketo.  
+Job Responsibilities
+
+    Work closely with business analysts and sales operations managers relating to changes in integrations for projects related to enterprise systems, integrations, processes, change control, and operations   
+    Work closely with business analysts and sales operations managers in solution sessions to understand requirements, find common ground, and evaluate acceptable solutions  
+    Create and maintain documentation on enterprise systems and satellite system integrations  
+    Create/update and maintain documentation in partnership with cross-departmental teams related to process and operations when related to specific work  
+    Collaborate with business analysts and sales operations managers to develop User Acceptance Testing scenarios, identify test criteria and test new functionality/enhancements  
+    Identify gaps in process, operations, and systems   
+    Understand data flows between enterprise systems 
+    Develop and maintain trust cross-departmentally  
+    Research and recommend emerging technology to the business and system owners 
+    Stay current with technological developments within the Salesforce platform, monitoring and planning for the organization to utilize new release functionality as it becomes available 
+    Log and track work in a structured ticketing system (Jira) and manages changes sets in accordance with best practices 
+    Behavioral Expectations   
+    Maintain focus on agreed upon work  
+    Clear communication of risk and impact when making change  
+    Solve problems iterative design philosophy  
+    Continuous improvement: self, systems, processes  
+    Ability to balance fixes and improvements  
+    Honesty when things go wrong (they will), and a plan to prevent the same thing from happening again  
+    Problem solving mindset (we do not look to blame, but to prevent future mistakes)  
+    You create your own experiments to find solutions or answer questions or your do research to find answers  
+    Transparent communication: status of work in flight, creating documentation of current state, educational tidbit sharing  
+    Maintain intellectual and emotional curiosity  
+    Self-managed work/personal life balance  
+    Diplomacy, negotiation, and development of complex relationships  
+    Strong communication skills - verbal, written, and listening  
+    Fair, objective, and data-driven in decision making  
+    Mentor less experienced co-workers whether informally or formally  
+    Set example of decision making, goal setting, and communication cadence   
+    Break down deliverables into smaller parts for teams executing on projects  
+    Pursue and maintain professional certification for key technologies and domain capabilities 
+    Collaborate in backlog of work for Sales Operations, Enterprise Project Management, IT, and other groups as appropriate  
+    Maintain knowledge of current platform capabilities and vendor roadmap  
+
+Knowledge and Experience
+
+     Fluent in English  
+    3+ years in administrating Salesforce  
+    2+ years in practice of Apex code 
+    Salesforce certifications as Administrator  
+    Bonus: Platform Developer certification  
+    Knowledge of Salesforce platform limits, order of execution, data storage impacts, and sharing and visibility 
+    Solid knowledge of Agile development methodologies 
+    Experience with Sales Cloud, Service Cloud, CPQ, & Communities 
+    Practice of “configuration before code” mindset to minimize cost and complexity and maximize scalability 
+    Experience designing or building Salesforce integrations with third-party applications 
+    Ability to create webhooks and work with API  
+    Bonus Experience  
+    Related educational degree or certificates  
+    ITIL Service Delivery; Agile methodology certifications  
+    Public presentations of your work: speaking at conferences, articles published, book author  
+    Atlassian, BSA, PM, Microsoft, Google, and/or other IT related certifications  
+
+Competencies
+Adapting to Change
+Communicating Effectively
+Driving for Results
+Managing Meetings
+Utilizing Feedback

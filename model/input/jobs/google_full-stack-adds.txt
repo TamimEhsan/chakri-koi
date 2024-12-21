@@ -1,0 +1,26 @@
+Minimum qualifications:
+
+    Bachelor’s degree or equivalent practical experience.
+    1 year of experience with software development in one or more programming languages (e.g., Python, C, C++, Java, JavaScript).
+    1 year of experience with full stack development, across back-end such as Java, Python, GO, or C++ codebases, and front-end experience including JavaScript or TypeScript, HTML, CSS or equivalent.
+    1 year of experience with data structures or algorithms.
+
+
+Preferred qualifications:
+
+    Experience with data analytics or online experimentation via A/B testing.
+    Experience developing accessible technologies.
+    Knowledge of Google Ad products.
+
+About the job
+
+Google's software engineers develop the next-generation technologies that change how billions of users connect, explore, and interact with information and one another. Our products need to handle information at massive scale, and extend well beyond web search. We're looking for engineers who bring fresh ideas from all areas, including information retrieval, distributed computing, large-scale system design, networking and data storage, security, artificial intelligence, natural language processing, UI design and mobile; the list goes on and is growing every day. As a software engineer, you will work on a specific project critical to Google’s needs with opportunities to switch teams and projects as you and our fast-paced business grow and evolve. We need our engineers to be versatile, display leadership qualities and be enthusiastic to take on new problems across the full-stack as we continue to push technology forward.
+
+Google Ads is helping power the open internet with the best technology that connects and creates value for people, publishers, advertisers, and Google. We’re made up of multiple teams, building Google’s Advertising products including search, display, shopping, travel and video advertising, as well as analytics. Our teams create trusted experiences between people and businesses with useful ads. We help grow businesses of all sizes from small businesses, to large brands, to YouTube creators, with effective advertiser tools that deliver measurable results. We also enable Google to engage with customers at scale.
+Responsibilities
+
+    Write product or system development code.
+    Participate in, or lead design reviews with peers and stakeholders to decide amongst available technologies.
+    Review code developed by other developers and provide feedback to ensure best practices (e.g., style guidelines, checking code in, accuracy, testability, and efficiency).
+    Triage product or system issues and debug/track/resolve by analyzing the sources of issues and the impact on hardware, network, or service operations and quality.
+    Coordinate with product, UX, and sales leads for product development.

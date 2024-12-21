@@ -1,0 +1,62 @@
+At Optimizely, we're on a mission to help people unlock their digital potential. We do that by reinventing how marketing and product teams work to create and optimize digital experiences across all channels. With Optimizely One, our industry-first operating system for marketers, we offer teams flexibility and choice to build their stack their way with our fully SaaS, fully decoupled, and highly composable solution.  
+
+We are proud to help more than 10,000 businesses, including H&M, PayPal, Zoom, and Toyota, enrich their customer lifetime value, increase revenue and grow their brands. Our innovation and excellence have earned us numerous recognitions as a leader by industry analysts such as Gartner, Forrester, and IDC, reinforcing our role as a trailblazer in MarTech. 
+
+At our core, we believe work is about more than just numbers -- it's about the people. Our culture is dynamic and constantly evolving, shaped by every employee, their actions and their stories. With over 1500 Optimizers spread across 12 global locations, our diverse team embodies the "One Optimizely" spirit, emphasizing collaboration and continuous improvement, while fostering a culture where every voice is heard and valued. 
+Introduction
+
+Software Engineer II engineers display an ability to independently deliver on projects of moderate complexity, from design to production, with consistently high quality. They can plan and effectively break down their own work. They make steady, visible progress and communicate issues and unexpected changes to their team, quickly and clearly. They take on a more active role within their team by proactively giving code reviews, helping to define team priorities, identify places where quality best practices are not being followed, and offering feedback to their peers and their manager. They are cultivating a deepening knowledge of their technical or product area as well as a high-level understanding of adjacent product areas. Their solid understanding of Optimizely development practices, ability to write clean code, and accumulated product knowledge enables them to successfully onboard interns or new hires. 
+Job Responsibilities
+
+    Ownership of small epics or moderate-sized portions of larger epics within a single delivery team 
+    Solves problems of moderate complexity with high-quality, minimum viable solutions, from design to completion 
+    Able to investigate and deliver fixes for moderately complex bugs that may have no obvious solution 
+    Participates in the technical design process by carefully reading and providing feedback on design docs from their team or authoring their own design docs 
+    Provides high-accountability on-call support, if applicable to the team they are on 
+    Actively contributes to incident retrospectives, and process-related ceremonies and does their part to drive follow-up tasks to completion 
+    Participates in identifying operational metrics and building dashboards to measure these 
+
+Knowledge and Experience
+
+    2-5 years of experience as a software engineer  
+    Experience building full-stack web applications and services with a variety of languages: C#, TypeScript, and React 
+    Experience building, delivering, and maintaining services that comprise modern PaaS/SaaS products 
+    Experience with agile delivery workflows and modern software quality techniques like TDD, pair programming, etc. 
+    Working Hours - 2pm - 10pm (Monday to Friday)
+
+Education
+
+Bachelor’s Degree (Computer Science or engineering preferred) or equivalent work experience
+Competencies
+Displaying Technical Expertise
+Critical Thinking
+Testing and Troubleshooting
+Demonstrating Initiative
+Utilizing Feedback
+
+Our new, cutting-edge office space in Dhaka is a testament to our dedication to enhancing your work experience. This state-of-the-art workspace features open workstations, a fully equipped kitchen, a nap room for relaxation, a tranquil zen garden, and an entertaining area, all designed to provide you with the ideal environment to thrive and grow.
+
+ 
+
+As part of our commitment to you, here are other benefits and perks you can expect:
+
+ 
+
+    Best-in-class compensation plans
+    Two annual festival bonuses
+    Recognition and rewards programs
+    Paid Maternity (4 months) & Paternity Leave (12 weeks)
+    Flexible vacations days and working hours
+    Annual Work/Service Anniversary Leave
+    Comprehensive medical & life insurance for you and your dependants
+    Volunteering opportunities to make a difference
+    Chance to work alongside our incredible global team
+    Monthly and quarterly regional and global team-building events
+    Communal transport facilities inside Dhaka to and from the office
+    Free catered lunch every day
+    An agile performance review process that encourages ongoing transparency between managers and direct reports
+    Enablement program and soft skill training to support internal career growth and development
+
+ 
+
+At Optimizely, our standardized language is English, and it is crucial to have good English communication skills to be successful in your global role. All our external and cross-location communication is done in US English (en-us), but internally you can speak in whichever native language you most identify with.

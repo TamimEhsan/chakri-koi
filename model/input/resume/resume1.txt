@@ -1,0 +1,20 @@
+I am Mohammad Tamimul Ehsan, a Software Engineer at Pridesys IT Ltd, where I primarily handle backend development tasks. A typical day for me involves reviewing project requirement documents, designing database schemas, creating API documentation, implementing APIs, writing tests, and conducting peer code reviews. Occasionally, I also work on frontend tasks when necessary. 
+
+As a Software Engineer II at Pridesys IT Ltd, I am developing a SaaS ERP solution for SMEs using a microservice architecture built with Spring Boot. This design improves system reliability, isolates faults, and enables independent scaling of services. I also designed and implemented an event-driven architecture using Apache Kafka with Golang and Spring Boot, ensuring a loosely coupled, resilient system with eventual consistency.
+
+As a Junior Backend Developer at the ICT Cell, BUET, I designed and developed the backend for BUET’s job application portal using Node.js, Express, and PostgreSQL. I automated report generation and data processing, significantly reducing computational overhead and enhancing operational efficiency.
+
+I further optimized the repository layer with stored procedures, triggers, and PostgreSQL indexing, improving data processing speeds and minimizing latency. Additionally, I integrated an external payment gateway API into the portal, enabling secure transactions for over 1,000 applicants monthly. This integration improved user experience and streamlined the application workflow.
+
+I try to maintain high code quality and optimize performance. I am also good at debugging and navigating large codebases. Over my career, I have worked on multiple large-scale projects, two of which are currently in production, with another one nearing deployment.
+
+My tech stack is diverse, with experience in Node.js and Spring Boot. I have a strong command of programming languages such as C++, Java, JavaScript, and Golang. Additionally, I am highly proficient in SQL databases like PostgreSQL and OracleDB, with a solid understanding of both practical applications and theoretical concepts. I also have hands-on experience with tools and technologies such as Git, Redis, Docker, Kubernetes, Azure, Jira, Kafka, and JUnit, which further enhance my capabilities as a software engineer.
+
+I earned my B.Sc. in Computer Science and Engineering from the Bangladesh University of Engineering & Technology (BUET). My coursework spanned foundational and advanced topics, including Object-Oriented Programming, Databases, Networking, Operating Systems, Data Structures, Algorithms, Computer Architecture, and more. I performed exceptionally well in these courses, building a strong foundation in computer science.
+
+I have a passion for solving complex problems. I am very good at tackling complicated situations and break them into bite size pieces. During my undergraduate studies, I actively participated in numerous programming competitions and hackathons, achieving multiple wins at both national and international levels. These experiences significantly increased my critical thinking skills and ability to perform under pressure.
+
+In my free time, I enjoy working on hobby projects, where I apply and deepen my knowledge. Projects like Algorithm Visualizer, Online Judge, Compiler, and Simple Database have strengthened my understanding of core concepts while being incredibly fun to build.
+
+My professional experience in backend development, combined with my problem-solving skills and passion for system design, makes me a strong candidate for this role. I am particularly interested in studying system design and architecture, and I aspire to become a software architect in the future.
+

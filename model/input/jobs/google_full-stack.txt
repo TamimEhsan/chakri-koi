@@ -1,0 +1,23 @@
+Minimum qualifications:
+
+    Bachelor’s degree or equivalent practical experience.
+    1 year of experience with software development in one or more programming languages (e.g., Python, C, C++, Java, JavaScript).
+    1 year of experience with data structures or algorithms.
+
+
+Preferred qualifications:
+
+    Experience in cloud technologies and applications.
+
+About the job
+
+Google's software engineers develop the next-generation technologies that change how billions of users connect, explore, and interact with information and one another. Our products need to handle information at massive scale, and extend well beyond web search. We're looking for engineers who bring fresh ideas from all areas, including information retrieval, distributed computing, large-scale system design, networking and data storage, security, artificial intelligence, natural language processing, UI design and mobile; the list goes on and is growing every day. As a software engineer, you will work on a specific project critical to Google’s needs with opportunities to switch teams and projects as you and our fast-paced business grow and evolve. We need our engineers to be versatile, display leadership qualities and be enthusiastic to take on new problems across the full-stack as we continue to push technology forward.
+
+Google Cloud accelerates every organization’s ability to digitally transform its business and industry. We deliver enterprise-grade solutions that leverage Google’s cutting-edge technology, and tools that help developers build more sustainably. Customers in more than 200 countries and territories turn to Google Cloud as their trusted partner to enable growth and solve their most critical business problems.
+Responsibilities
+
+    Develop the key Cloud Console product and help make Google Cloud better for users.
+    Work with User Experience Designers and Researchers, Product Managers, and other Engineers to implement a positive user experience.
+    Collaborate with API on integration and delivery, including scalability and performance.
+    Provide full stack coding knowledge when working on strategic Serverless products (e.g., TypeScript, Java).
+    Take the ownership for the delivered solutions.

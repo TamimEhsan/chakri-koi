@@ -21,6 +21,6 @@
       "@/*": ["./*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "app/companies/[id]/reindex/page.jsx", "app/companies/[id]/page.jsx", "app/companies/page.jsx", "app/matcher/page.jsx", "app/resumes/[id]/page.jsx", "app/resumes/page.jsx", "app/page.jsx", "app/layout.jsx"],
   "exclude": ["node_modules"]
 }

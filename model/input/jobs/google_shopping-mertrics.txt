@@ -1,0 +1,27 @@
+Minimum qualifications:
+
+    Bachelor’s degree or equivalent practical experience.
+    1 year of experience with software development in one or more programming languages (e.g., Python, C, C++, Java, JavaScript).
+    1 year of experience with data structures or algorithms.
+
+
+Preferred qualifications:
+
+    Experience with Go, SQL, or C++.
+    Ability to drive the impact/outcome of the work rather than the technical complexity of the solution.
+    Excellent data analysis skills.
+
+About the job
+
+Google's software engineers develop the next-generation technologies that change how billions of users connect, explore, and interact with information and one another. Our products need to handle information at massive scale, and extend well beyond web search. We're looking for engineers who bring fresh ideas from all areas, including information retrieval, distributed computing, large-scale system design, networking and data storage, security, artificial intelligence, natural language processing, UI design and mobile; the list goes on and is growing every day. As a software engineer, you will work on a specific project critical to Google’s needs with opportunities to switch teams and projects as you and our fast-paced business grow and evolve. We need our engineers to be versatile, display leadership qualities and be enthusiastic to take on new problems across the full-stack as we continue to push technology forward.
+
+The storage and processing platform of Shopping hosts more than 50B product offers owned by millions of merchants. This data is served on many Google surfaces and the various Shopping ad formats contribute significantly to the overall Google revenue. We are establishing a centralized platform for developing, implementing and sharing our organization’s most important metrics and data across all of the Shopping use cases. The platform was launched in April, already has hundreds of internal users and is one of the fastest growing systems within Shopping. Our metrics platform enables teams across Google to quickly and reliably build, consume and export trustworthy Shopping metrics, both for internal and external use. Making Shopping Merchant Metrics universally accessible and useful for merchants and Google poses numerous challenges that need to be overcome, both in terms of the scale that needs to be handled, and in terms of sourcing and modeling the data on the platform. Our new Metrics Data Engineering team will be responsible for the latter
+
+People shop on Google more than a billion times a day - and the Commerce team is responsible for building the experiences that serve these users. The mission for Google Commerce is to be an essential part of the shopping journey for consumers - from inspiration to to a simple and secure checkout experience - and the best place for retailers/merchants to connect with consumers. We support and partner with the commerce ecosystem, from large retailers to small local merchants, to give them the tools, technology and scale to thrive in today’s digital world.
+Responsibilities
+
+    Implement data pipelines in SQL, C++ and Scaling the platform by including more data and metrics derived from it
+    Defining the data schema and the guiding principles for schema extensions for a wide range of data on the platform
+    Building robust and efficient data pipelines to ingest data from dozens of sources across Google and process and present them in a timely manner
+    Informing and Driving the development of critical business metrics for Shopping strategy
+    Evangelise the platform and educate stakeholder teams in engineering, product and data science so they are making best use of the platform and helping shape its growth
