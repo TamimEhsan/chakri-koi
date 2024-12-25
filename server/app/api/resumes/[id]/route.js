@@ -9,7 +9,7 @@ export async function GET(req, { params }) {
     if (!id) {
         return NextResponse.json({ error: 'ID is required' }, { status: 400 });
     }
-    console.log('GET')
+
     const query = `SELECT * FROM public."resume" WHERE id = $1`;
     const values = [id];
     const { rows } = await pool.query(query, values);

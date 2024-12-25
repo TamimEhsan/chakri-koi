@@ -36,7 +36,7 @@ const AddResumeModal = ({ isAddModalOpen, setIsAddModalOpen }) => {
         })
 
         if (response.ok) {
-            console.log('Resume added successfully!')
+            
             setFormData({
                 name: '',
                 role: '',

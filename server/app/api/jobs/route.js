@@ -4,23 +4,9 @@ import { NextResponse } from 'next/server';
 import fs from 'fs';
 export async function POST(request) {
   let body = await request.json()
-
-  /*
-  CREATE TABLE IF NOT EXISTS job (
-    id SERIAL PRIMARY KEY,
-    company_id INTEGER REFERENCES company(id),
-    title TEXT,
-    location TEXT,
-    experience TEXT,
-    tags TEXT,
-    content TEXT,
-    embeddings VECTOR
-);
-*/
     if (body.link && body.link.includes('http')) {
         body = await parseLink(body);
     }
-    console.log(body.title, body.location, body.experience);
     // save the job to the file system
     fs.writeFileSync('job.txt', body.content);
 
@@ -46,7 +32,6 @@ async function parseLink(body) {
     const company = rows[0];
 
     // get the title of the page using css selector;
-    console.log(`'${company.title_selector}'`);
     const htmlContent = await response.text();
     const $ = cheerio.load(htmlContent);
     // save to a file

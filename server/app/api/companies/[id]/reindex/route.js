@@ -26,13 +26,12 @@ async function reIndex(company) {
     let query = `UPDATE public."company" SET indexing = true WHERE id = $1 AND indexing = false RETURNING *`;
     let values = [company.id];
     let res = (await pool.query(query, values)).rows;
-    console.log("Hello", res.length);
+
     if( !res || res.length === 0) {
         return;
     }
     console.log("Indexing company", company.name);
-    // console.log(company);
-    // return;
+  
     const pagesToIndex = [];
     const pagesToIndexMap = new Map();
 
@@ -109,7 +108,7 @@ async function getJobLinks(page, company) {
     const $ = cheerio.load(page);
     company.job_link_selector = company.job_link_selector || '.WpHeLc.VfPpkd-mRLv6.VfPpkd-RLmnJb';
     const links = $(company.job_link_selector);
-    // console.log(typeof links);
+
     const jobLinks = [];
     for( const link of links ) {
         const href = $(link).attr('href');

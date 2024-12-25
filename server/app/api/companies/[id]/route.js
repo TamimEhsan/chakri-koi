@@ -9,7 +9,6 @@ export async function GET(req, { params }) {
   if (!id) {
     return NextResponse.json({ error: 'ID is required' }, { status: 400 });
   }
-    console.log('GET')
     const query = `SELECT * FROM public."company" WHERE id = $1`;
     const values = [id];
     let { rows } = await pool.query(query, values);
@@ -18,15 +17,14 @@ export async function GET(req, { params }) {
     }
     const company = rows[0];
 
-    const queryJob = `SELECT id, title, location, experience, tags FROM public."job" WHERE company_id = $1`;
+    const queryJob = `SELECT id, title, location, experience, tags, link FROM public."job" WHERE company_id = $1`;
     const valuesJob = [id];
     const rowsJob  = (await pool.query(queryJob, valuesJob)).rows; 
 
-    console.log("rows::",rowsJob); 
-    console.log("id::",id);
+
     if( !rowsJob || rowsJob.length === 0) company.jobs = [];
     else company.jobs = rowsJob;
-    console.log(company.jobs.length);
+
     return NextResponse.json(company);
 }
 

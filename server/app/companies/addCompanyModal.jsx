@@ -46,7 +46,6 @@ name TEXT,
         })
 
         if (response.ok) {
-            console.log('Company added successfully!')
             setFormData({
                 name: '',
                 start_url: '',

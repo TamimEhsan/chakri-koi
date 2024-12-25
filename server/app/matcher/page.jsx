@@ -7,7 +7,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Checkbox } from "@/components/ui/checkbox"
 import { Label } from "@/components/ui/label"
 import { useEffect, useState } from 'react'
-
+import JobCards from './jobCard'
 export default function Matcher() {
   // const [selectedCompanies, setSelectedCompanies] = useState([])
   // const [selectedResumes, setSelectedResumes] = useState([])
@@ -87,7 +87,8 @@ export default function Matcher() {
             <h2 key={match.id} className="text-xl font-semibold"> 
               {match.role}
             </h2>
-            {match.jobs.map(job => (
+            <JobCards jobs={match.jobs} resume={match} />
+            {/* {match.jobs.map(job => (
                 <Card key={match.id}>
                 <CardContent className="flex justify-between items-center p-6">
                   <div>
@@ -106,7 +107,7 @@ export default function Matcher() {
                   </div>
                 </CardContent>
               </Card>
-              ))}
+              ))} */}
               </>
           ))}
         </div>

@@ -4,7 +4,6 @@ Chakri koi is an one stop solution to make your job search a bit easier. Add res
 > [!NOTE]
 > The software is still work in progress and not ready for public usage.
 
-![](assets/screenshot-job-match.png)
 ## Synopsis
 Every month I have to search career website of at least 20+ companies to find suitable jobs for myself. On average I have to search more than 50 jobs per company and select 3-5 jobs most suitable. It's very time consuming and repetative. Hence, the idea of chakri koi?
 
@@ -13,12 +12,16 @@ Every month I have to search career website of at least 20+ companies to find su
 The software provides multiple features:
 
 ### 📝 Resume
+![](assets/screenshot-similarity.png)
 You can add different variant of your resume. eg: a resume for backend development or may be one for devops. Chakri koi will create and store a vector embedding of your resume to better find a match for you!
 
 ### 📈 Company 
+
+![](assets/screenshot-company-jobs.png)
 You can add multiple companies in the software. You can add jobs under the company manually or let chakri koi scrap them for you. However, scraping is a bit technical. So, you will need to add some preconfiguration for it. Luckily, there are some precofigured scrapping added for some companies! The jobs are vectorized for matching with your resumes.
 
 ### ✨ Matching
+![](assets/screenshot-job-match.png)
 The most interesting part of the software is the matching. Using **Sentence BERT** model `paraphrase-MPNet-base-v2` chakri koi will suggest you the most suitable jobs that you can apply for! 
 
 You can also edit your resume in an interactive editor to iteratively improve your match with a target job. This will definitely help you to make your resume stand out. 

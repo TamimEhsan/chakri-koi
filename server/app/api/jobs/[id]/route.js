@@ -1,7 +1,6 @@
 import { NextResponse } from 'next/server'
 import pool from '@/lib/db'
 
-
 // get a job
 export async function GET(req, { params }) {
     const { id } = params;
@@ -9,8 +8,8 @@ export async function GET(req, { params }) {
   if (!id) {
     return NextResponse.json({ error: 'ID is required' }, { status: 400 });
   }
-    console.log('GET')
-    const query = `SELECT * FROM public."job" WHERE id = $1`;
+
+    const query = `SELECT job.*, company.name as company FROM public."job" JOIN company ON company.id = job.company_id WHERE job.id = $1`;
     const values = [id];
     const { rows } = await pool.query(query, values);
     if ( !rows || rows.length === 0) {

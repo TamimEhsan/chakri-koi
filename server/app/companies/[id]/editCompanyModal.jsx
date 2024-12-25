@@ -58,7 +58,7 @@ const EditCompanyModal = ({ isEditModalOpen, setIsEditModalOpen, company }) => {
         })
 
         if (response.ok) {
-            console.log('Company Edited successfully!')
+            
             setFormData({
                 name: '',
                 start_url: '',

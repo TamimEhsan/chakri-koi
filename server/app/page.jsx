@@ -6,7 +6,7 @@ export default function Home() {
   return (
     <div className="space-y-16">
       <section className="text-center space-y-4">
-        <h1 className="text-4xl font-bold">Welcome to Resume Matcher</h1>
+        <h1 className="text-4xl font-bold">Welcome to Chakri Koi?</h1>
         <p className="text-xl text-muted-foreground">Find the perfect match between resumes and job posts</p>
         <Button asChild size="lg">
           <Link href="/matcher">Go to Matcher</Link>

@@ -7,9 +7,10 @@ import { Input } from "@/components/ui/input"
 import Link from 'next/link'
 import { useEffect, useState } from 'react'
 import AddResumeModal from './addResumeModal'
+import { Plus } from "lucide-react"
 export default function Resumes() {
   // const router = useRouter()
-  
+
   const [isAddModalOpen, setIsAddModalOpen] = useState(false)
   const [searchTerm, setSearchTerm] = useState('')
   const [resumes, setResumes] = useState([])
@@ -40,7 +41,9 @@ export default function Resumes() {
     <div>
       <div className="flex justify-between items-center mb-6">
         <h1 className="text-3xl font-bold">Resumes</h1>
-        <Button onClick={() => setIsAddModalOpen(true)}>Add New Resume</Button>
+        <Button onClick={() => setIsAddModalOpen(true)}>
+          <Plus className="mr-2 h-4 w-4" />
+          Add New Resume</Button>
       </div>
       <Input
         type="text"
@@ -49,7 +52,7 @@ export default function Resumes() {
         onChange={(e) => setSearchTerm(e.target.value)}
         className="mb-4"
       />
-      <div className="space-y-4">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         {filteredResumes.map(resume => (
           <Card key={resume.id}>
             <CardContent className="p-6">
@@ -66,10 +69,10 @@ export default function Resumes() {
           </Card>
         ))}
       </div>
-      <AddResumeModal 
-        isAddModalOpen={isAddModalOpen} 
+      <AddResumeModal
+        isAddModalOpen={isAddModalOpen}
         setIsAddModalOpen={setIsAddModalOpen} />
-      
+
     </div>
   )
 }

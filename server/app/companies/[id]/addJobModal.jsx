@@ -40,7 +40,7 @@ const AddJobModal = ({ isAddJobModalOpen, setIsAddJobModalOpen, companyId }) => 
         })
 
         if (response.ok) {
-            console.log('Job added successfully!')
+            
             setFormData({
                 link: '',
                 company_id: companyId,

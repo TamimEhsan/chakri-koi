@@ -1,12 +1,12 @@
 'use client'
 
 import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardTitle } from "@/components/ui/card"
+import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
+import { Plus } from 'lucide-react'
 import { Input } from "@/components/ui/input"
 import Link from 'next/link'
 import { useEffect, useState } from 'react'
 import AddCompanyModal from './addCompanyModal'
-import { set } from "date-fns"
 
 
 export default function Companies() {
@@ -18,14 +18,14 @@ export default function Companies() {
   useEffect(() => {
     fetch('/api/companies')
       .then(response => response.json())
-      .then(data => setCompanies(processCompanies(data)) )
+      .then(data => setCompanies(processCompanies(data)))
   }, [])
 
   const processCompanies = (data) => {
-    if( !data || data.length === 0 ) {
+    if (!data || data.length === 0) {
       return []
     }
-    return data.map( (company) => {
+    return data.map((company) => {
       return {
         id: company.id,
         name: company.name,
@@ -49,7 +49,9 @@ export default function Companies() {
     <div>
       <div className="flex justify-between items-center mb-6">
         <h1 className="text-3xl font-bold">Companies</h1>
-        <Button onClick={() => setIsAddModalOpen(true)}>Add New Company</Button>
+        <Button onClick={() => setIsAddModalOpen(true)}>
+        <Plus className="mr-2 h-4 w-4" />
+          Add New Company</Button>
       </div>
       <Input
         type="text"
@@ -58,22 +60,40 @@ export default function Companies() {
         onChange={(e) => setSearchTerm(e.target.value)}
         className="mb-4"
       />
-      <div className="space-y-4">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         {filteredCompanies.map(company => (
-          <Card key={company.id}>
-            <CardContent className="p-6">
-              <Link href={`/companies/${company.id}`} className="block hover:underline">
-                <CardTitle className="text-xl mb-2">{company.name}</CardTitle>
-              </Link>
-              <p className="text-blue-600 dark:text-blue-400">{company.website}</p>
-              <p className="text-muted-foreground mt-2">{company.description}</p>
-            </CardContent>
+
+          <Card className="flex flex-col sm:flex-row overflow-hidden" key={company.id}>
+            <div className="w-full sm:w-1/3 p-4 flex items-center justify-center bg-muted">
+              <img
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTntP7y9PTP3jWbEGeA1pgrBAV3JAVrVyah5g&s"
+                alt={`${company.name} logo`}
+                width={100}
+                height={100}
+                className="object-contain"
+              />
+            </div>
+            <div className="w-full sm:w-2/3 flex flex-col">
+              <CardHeader>
+                <CardTitle>{company.name}</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-muted-foreground">Hello There</p>
+              </CardContent>
+              <CardFooter className="flex flex-col sm:flex-row gap-2 mt-auto">
+                <Button variant="default">Visit</Button>
+                <Link href={`/companies/${company.id}`} className="block hover:underline">
+                  <Button variant="outline">Details</Button>
+                </Link>
+                
+              </CardFooter>
+            </div>
           </Card>
         ))}
       </div>
 
-      <AddCompanyModal 
-        isAddModalOpen={isAddModalOpen} 
+      <AddCompanyModal
+        isAddModalOpen={isAddModalOpen}
         setIsAddModalOpen={setIsAddModalOpen} />
     </div>
   )
