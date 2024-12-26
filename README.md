@@ -13,11 +13,15 @@ The software provides multiple features:
 
 ### 📝 Resume
 ![](assets/screenshot-similarity.png)
+![](assets/screenshot-grammar.png)
 You can add different variant of your resume. eg: a resume for backend development or may be one for devops. Chakri koi will create and store a vector embedding of your resume to better find a match for you!
 
 ### 📈 Company 
 
 ![](assets/screenshot-company-jobs.png)
+
+
+
 You can add multiple companies in the software. You can add jobs under the company manually or let chakri koi scrap them for you. However, scraping is a bit technical. So, you will need to add some preconfiguration for it. Luckily, there are some precofigured scrapping added for some companies! The jobs are vectorized for matching with your resumes.
 
 ### ✨ Matching
