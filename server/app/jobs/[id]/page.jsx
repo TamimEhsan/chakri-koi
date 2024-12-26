@@ -6,7 +6,8 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { useEffect, useState } from 'react'
 import EditResumeDialog from './editModal'
 import Link from "next/link"
-import { Briefcase, Building2, Columns2, MapPin, Pencil } from "lucide-react"
+import { Briefcase, Building2, Columns2, Mails, MapPin, Pencil } from "lucide-react"
+
 
 
 export default function Resume({ params }) {
@@ -18,7 +19,8 @@ export default function Resume({ params }) {
     title: '',
     location: '',
     experience: '',
-    content: ''
+    content: '',
+    link: ''
   })
   useEffect(() => {
     fetch(`/api/jobs/${params.id}`)
@@ -71,6 +73,11 @@ export default function Resume({ params }) {
           </div>
         </div>
         <div className="flex items-center space-x-2">
+        <Link href={job.link} passHref>
+            <Button variant="outline" as="a">
+              <Mails className="mr-2 h-4 w-4" />
+              Apply</Button>
+          </Link>
           <Button variant="outline" onClick={() => setIsEditModalOpen(true)}>
             <Pencil className="mr-2 h-4 w-4" />
             Edit Job</Button>
@@ -95,7 +102,7 @@ export default function Resume({ params }) {
       </Card> */}
       <Card>
         <CardHeader>
-          <CardTitle>Job Content</CardTitle>
+          <CardTitle>Job Description</CardTitle>
         </CardHeader>
         <CardContent>
           <div className="whitespace-pre-wrap">{job.content}</div>

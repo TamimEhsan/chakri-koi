@@ -1,9 +1,9 @@
 'use client'
 
 import { Button } from "@/components/ui/button"
-import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from "@/components/ui/dialog"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
+import { Sheet, SheetContent, SheetDescription, SheetHeader, SheetTitle } from "@/components/ui/sheet"
 import { useState } from 'react'
 
 
@@ -61,14 +61,14 @@ name TEXT,
     }
 
     return (
-        <Dialog open={isAddModalOpen} onOpenChange={setIsAddModalOpen}>
-            <DialogContent>
-                <DialogHeader>
-                    <DialogTitle>Add New Company</DialogTitle>
-                    <DialogDescription>
+        <Sheet open={isAddModalOpen} onOpenChange={setIsAddModalOpen}>
+            <SheetContent style={{ width: '100%', maxWidth: '600px' }}>
+                <SheetHeader>
+                    <SheetTitle>Add New Company</SheetTitle>
+                    <SheetDescription>
                         Enter the details of the new company.
-                    </DialogDescription>
-                </DialogHeader>
+                    </SheetDescription>
+                </SheetHeader>
                 <form className="space-y-4" onSubmit={handleSubmit}>
                     <div className="space-y-2">
                         <Label htmlFor="name">Name</Label>
@@ -100,8 +100,8 @@ name TEXT,
                     </div>
                     <Button type="submit">Add Company</Button>
                 </form>
-            </DialogContent>
-        </Dialog>
+            </SheetContent>
+        </Sheet>
     )
 }
 

@@ -1,22 +1,15 @@
 'use client'
 
 import { Button } from "@/components/ui/button"
-import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from "@/components/ui/dialog"
+
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
+import { Sheet, SheetContent, SheetDescription, SheetHeader, SheetTitle } from "@/components/ui/sheet"
 import { useEffect, useState } from 'react'
 
 
 const EditCompanyModal = ({ isEditModalOpen, setIsEditModalOpen, company }) => {
-    /*
-    name TEXT,
-        start_url TEXT,
-        base_url TEXT,
-        title_selector TEXT,
-        location_selector TEXT,
-        experience_selector TEXT,
-        content_selector TEXT
-    */
+
     const [formData, setFormData] = useState({
         name: '',
         start_url: '',
@@ -74,14 +67,14 @@ const EditCompanyModal = ({ isEditModalOpen, setIsEditModalOpen, company }) => {
     }
 
     return (
-        <Dialog open={isEditModalOpen} onOpenChange={setIsEditModalOpen}>
-            <DialogContent>
-                <DialogHeader>
-                    <DialogTitle>Add New Company</DialogTitle>
-                    <DialogDescription>
-                        Enter the details of the new company.
-                    </DialogDescription>
-                </DialogHeader>
+        <Sheet open={isEditModalOpen} onOpenChange={setIsEditModalOpen} >
+            <SheetContent style={{ width: '100%', maxWidth: '600px' }}>
+                <SheetHeader>
+                    <SheetTitle>Edit Company Details</SheetTitle>
+                    <SheetDescription>
+                        Enter the details of the company.
+                    </SheetDescription>
+                </SheetHeader>
                 <form className="space-y-4" onSubmit={handleSubmit}>
                     <div className="space-y-2">
                         <Label htmlFor="name">Name</Label>
@@ -111,10 +104,10 @@ const EditCompanyModal = ({ isEditModalOpen, setIsEditModalOpen, company }) => {
                         <Label htmlFor="content_selector">Content Selector</Label>
                         <Input id="content_selector" placeholder="Content Selector" value={formData.content_selector} onChange={handleChange} />
                     </div>
-                    <Button type="submit">Edit Company</Button>
+                    <Button type="submit">Save Changes</Button>
                 </form>
-            </DialogContent>
-        </Dialog>
+            </SheetContent>
+        </Sheet>
     )
 }
 

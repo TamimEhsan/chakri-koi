@@ -62,7 +62,7 @@ const EditResumeDialog = ({ isEditModalOpen, setIsEditModalOpen, resume }) => {
 
   return (
     <Dialog open={isEditModalOpen} onOpenChange={setIsEditModalOpen}>
-      <DialogContent>
+      <DialogContent className="w-full max-w-7xl">
         <DialogHeader>
           <DialogTitle>Edit Resume</DialogTitle>
         </DialogHeader>
@@ -81,7 +81,8 @@ const EditResumeDialog = ({ isEditModalOpen, setIsEditModalOpen, resume }) => {
           </div>
           <div className="space-y-2">
             <Label htmlFor="content">Resume Content</Label>
-            <Textarea id="content" value={formData.content} onChange={handleChange} placeholder="Resume Content" />
+            <Textarea 
+            id="content" value={formData.content} onChange={handleChange} placeholder="Resume Content" />
           </div>
           <Button type="submit">Save Changes</Button>
         </form>

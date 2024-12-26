@@ -1,10 +1,15 @@
 'use client'
 
 import { Button } from "@/components/ui/button"
-import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog"
+import {
+    Sheet,
+    SheetContent,
+    SheetHeader,
+    SheetTitle
+} from "@/components/ui/sheet"
+
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Textarea } from "@/components/ui/textarea"
 import { useState } from "react"
 
@@ -56,11 +61,11 @@ const AddJobModal = ({ isAddJobModalOpen, setIsAddJobModalOpen, companyId }) => 
     }
 
     return (
-        <Dialog open={isAddJobModalOpen} onOpenChange={setIsAddJobModalOpen}>
-            <DialogContent>
-                <DialogHeader>
-                    <DialogTitle>Add New Job</DialogTitle>
-                </DialogHeader>
+        <Sheet open={isAddJobModalOpen} onOpenChange={setIsAddJobModalOpen}>
+            <SheetContent style={{ width: '100%', maxWidth: '600px' }}>
+                <SheetHeader>
+                    <SheetTitle>Add New Job</SheetTitle>
+                </SheetHeader>
                 <form className="space-y-4" onSubmit={handleSubmit}>
                     <div className="space-y-2">
                         <Label htmlFor="link">Job Post Link</Label>
@@ -84,12 +89,12 @@ const AddJobModal = ({ isAddJobModalOpen, setIsAddJobModalOpen, companyId }) => 
                     </div>
                     <div className="space-y-2">
                         <Label htmlFor="content">Job Description</Label>
-                        <Textarea id="content" placeholder="Job Description" value={formData.content} onChange={handleChange} />
+                        <Textarea className="h-96" id="content" placeholder="Job Description" value={formData.content} onChange={handleChange} />
                     </div>
                     <Button type="submit">Add Job</Button>
                 </form>
-            </DialogContent>
-        </Dialog>
+            </SheetContent>
+        </Sheet>
     )
 }
 

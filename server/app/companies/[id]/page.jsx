@@ -133,13 +133,13 @@ export default function Company({ params }) {
             </CardContent>
             <CardFooter className="flex items-center space-x-2">
               <Link href={`/jobs/${job.id}`}>
-                <Button variant="outline">
+                <Button >
                   <Eye className="mr-2 h-4 w-4" />
                   View Job Details
                 </Button>
               </Link>
               <Link href={job.link}>
-                <Button >
+                <Button variant="outline">
                   <SquareArrowOutUpRight className="mr-2 h-4 w-4" />
                   View Job Post
                 </Button>

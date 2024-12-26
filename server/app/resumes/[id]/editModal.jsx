@@ -1,10 +1,10 @@
-import { useEffect, useState } from 'react';
-import { useRouter } from 'next/navigation';
-import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog';
+import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
+import { Sheet, SheetContent, SheetHeader, SheetTitle } from "@/components/ui/sheet";
 import { Textarea } from '@/components/ui/textarea';
-import { Button } from '@/components/ui/button';
+import { useRouter } from 'next/navigation';
+import { useEffect, useState } from 'react';
 
 const EditResumeDialog = ({ isEditModalOpen, setIsEditModalOpen, resume }) => {
   const router = useRouter();
@@ -61,11 +61,11 @@ const EditResumeDialog = ({ isEditModalOpen, setIsEditModalOpen, resume }) => {
   };
 
   return (
-    <Dialog open={isEditModalOpen} onOpenChange={setIsEditModalOpen}>
-      <DialogContent>
-        <DialogHeader>
-          <DialogTitle>Edit Resume</DialogTitle>
-        </DialogHeader>
+    <Sheet open={isEditModalOpen} onOpenChange={setIsEditModalOpen}>
+      <SheetContent style={{ width: '100%', maxWidth: '600px' }}>
+        <SheetHeader>
+          <SheetTitle>Edit Resume</SheetTitle>
+        </SheetHeader>
         <form className="space-y-4" onSubmit={handleSubmit}>
           <div className="space-y-2">
             <Label htmlFor="name">Name</Label>
@@ -81,12 +81,12 @@ const EditResumeDialog = ({ isEditModalOpen, setIsEditModalOpen, resume }) => {
           </div>
           <div className="space-y-2">
             <Label htmlFor="content">Resume Content</Label>
-            <Textarea id="content" value={formData.content} onChange={handleChange} placeholder="Resume Content" />
+            <Textarea id="content" value={formData.content} onChange={handleChange} placeholder="Resume Content" className='h-96' />
           </div>
           <Button type="submit">Save Changes</Button>
         </form>
-      </DialogContent>
-    </Dialog>
+      </SheetContent>
+    </Sheet>
   );
 };
 

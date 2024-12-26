@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import { Button } from "@/components/ui/button"
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card"
+import { Building2, FileText, Sparkles, SquarePlus } from 'lucide-react'
 
 export default function Home() {
   return (
@@ -18,7 +19,9 @@ export default function Home() {
         <div className="grid md:grid-cols-3 gap-8">
           <Card>
             <CardHeader>
-              <CardTitle>Smart Matching</CardTitle>
+              <CardTitle className='flex items-center text-blue-500'>
+                <Sparkles className="h-8 w-8 mr-2 " />
+                Smart Matching</CardTitle>
             </CardHeader>
             <CardContent>
               <p>Our advanced algorithm matches resumes with job posts for optimal results.</p>
@@ -26,7 +29,9 @@ export default function Home() {
           </Card>
           <Card>
             <CardHeader>
-              <CardTitle>Company Management</CardTitle>
+              <CardTitle className='flex items-center text-yellow-500'>
+                <Building2 className="h-8 w-8 mr-2 " />
+                Company Management</CardTitle>
             </CardHeader>
             <CardContent>
               <p>Easily manage companies, their job posts, and track matching progress.</p>
@@ -34,7 +39,9 @@ export default function Home() {
           </Card>
           <Card>
             <CardHeader>
-              <CardTitle>Resume Database</CardTitle>
+              <CardTitle className='flex items-center text-green-500'>
+                <FileText className="h-8 w-8 mr-2 " />
+                Resume Database</CardTitle>
             </CardHeader>
             <CardContent>
               <p>Store and manage resumes with tags for efficient organization and searching.</p>
