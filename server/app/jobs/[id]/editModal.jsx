@@ -5,26 +5,30 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
 import { Button } from '@/components/ui/button';
+import { Sheet, SheetContent, SheetHeader, SheetTitle } from '@/components/ui/sheet';
 
-const EditResumeDialog = ({ isEditModalOpen, setIsEditModalOpen, resume }) => {
+
+const EditJobDialog = ({ isEditModalOpen, setIsEditModalOpen, job }) => {
   const router = useRouter();
   const [formData, setFormData] = useState({
-    id: resume.id,
-    name: resume.name,
-    role: resume.role,
-    tags: resume.tags.join(','),
-    content: resume.content,
+    id: job.id,
+    link: job.link,
+    title: job.title,
+    location: job.location,
+    experience: job.experience,
+    content: job.content,
   });
 
   useEffect(() => {
     setFormData({
-        id: resume.id,
-        name: resume.name,
-        role: resume.role,
-        tags: resume.tags.join(','),
-        content: resume.content,
+      id: job.id,
+      link: job.link,
+      title: job.title,
+      location: job.location,
+      experience: job.experience,
+      content: job.content,
     });
-    }, [resume]);
+    }, [job]);
 
   const handleChange = (e) => {
     const { id, value } = e.target;
@@ -38,22 +42,18 @@ const EditResumeDialog = ({ isEditModalOpen, setIsEditModalOpen, resume }) => {
     e.preventDefault();
     setIsEditModalOpen(false);
     try {
-      const response = await fetch(`/api/resumes/${resume.id}`, {
+      const response = await fetch(`/api/jobs/${job.id}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({
-          ...formData,
-          tags: formData.tags.split(',').map(tag => tag.trim()).join(','),
-        }),
+        body: JSON.stringify(formData),
       });
 
       if (response.ok) {
-        
         router.refresh(); // Reload the current page
       } else {
-        console.error('Failed to update resume');
+        console.error('Failed to update job');
       }
     } catch (error) {
       console.error('Error:', error);
@@ -61,34 +61,38 @@ const EditResumeDialog = ({ isEditModalOpen, setIsEditModalOpen, resume }) => {
   };
 
   return (
-    <Dialog open={isEditModalOpen} onOpenChange={setIsEditModalOpen}>
-      <DialogContent className="w-full max-w-7xl">
-        <DialogHeader>
-          <DialogTitle>Edit Resume</DialogTitle>
-        </DialogHeader>
+    <Sheet open={isEditModalOpen} onOpenChange={setIsEditModalOpen}>
+      <SheetContent style={{ width: '100%', maxWidth: '600px' }}>
+        <SheetHeader>
+          <SheetTitle>Edit Job</SheetTitle>
+        </SheetHeader>
         <form className="space-y-4" onSubmit={handleSubmit}>
           <div className="space-y-2">
-            <Label htmlFor="name">Name</Label>
-            <Input id="name" value={formData.name} onChange={handleChange} placeholder="Name" />
+            <Label htmlFor="title">Title</Label>
+            <Input id="title" value={formData.title} onChange={handleChange} placeholder="Title" />
           </div>
           <div className="space-y-2">
-            <Label htmlFor="role">Role</Label>
-            <Input id="role" value={formData.role} onChange={handleChange} placeholder="Role" />
+            <Label htmlFor="location">Location</Label>
+            <Input id="location" value={formData.location} onChange={handleChange} placeholder="Location" />
           </div>
           <div className="space-y-2">
-            <Label htmlFor="tags">Tags (comma-separated)</Label>
-            <Input id="tags" value={formData.tags} onChange={handleChange} placeholder="Tags (comma-separated)" />
+            <Label htmlFor="experience">Experience</Label>
+            <Input id="experience" value={formData.experience} onChange={handleChange} placeholder="Experience" />
           </div>
           <div className="space-y-2">
-            <Label htmlFor="content">Resume Content</Label>
+            <Label htmlFor="link">Job Link</Label>
+            <Input id="link" value={formData.link} onChange={handleChange} placeholder="Job Link" />
+          </div>
+          <div className="space-y-2">
+            <Label htmlFor="content">Job Content</Label>
             <Textarea 
-            id="content" value={formData.content} onChange={handleChange} placeholder="Resume Content" />
+            className='h-96' id="content" value={formData.content} onChange={handleChange} placeholder="Job Content" />
           </div>
           <Button type="submit">Save Changes</Button>
         </form>
-      </DialogContent>
-    </Dialog>
+      </SheetContent>
+    </Sheet>
   );
 };
 
-export default EditResumeDialog;
+export default EditJobDialog;

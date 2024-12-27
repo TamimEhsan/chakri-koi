@@ -4,7 +4,7 @@ import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { useEffect, useState } from 'react'
-import EditResumeDialog from './editModal'
+import EditJobDialog from './editModal'
 import Link from "next/link"
 import { Briefcase, Building2, Columns2, Mails, MapPin, Pencil } from "lucide-react"
 
@@ -108,11 +108,11 @@ export default function Resume({ params }) {
           <div className="whitespace-pre-wrap">{job.content}</div>
         </CardContent>
       </Card>
-      {/* <EditResumeDialog 
+       <EditJobDialog 
         isEditModalOpen={isEditModalOpen} 
         setIsEditModalOpen={setIsEditModalOpen} 
-        resume={job} 
-      /> */}
+        job={job} 
+      /> 
 
     </div>
   )

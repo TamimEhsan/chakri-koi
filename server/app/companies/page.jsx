@@ -2,7 +2,7 @@
 
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
-import { Plus } from 'lucide-react'
+import { Eye, Plus, SquareArrowUpRight } from 'lucide-react'
 import { Input } from "@/components/ui/input"
 import Link from 'next/link'
 import { useEffect, useState } from 'react'
@@ -75,15 +75,19 @@ export default function Companies() {
             </div>
             <div className="w-full sm:w-2/3 flex flex-col">
               <CardHeader>
-                <CardTitle>{company.name}</CardTitle>
+                <CardTitle className="text-2xl">{company.name}</CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground">Hello There</p>
               </CardContent>
               <CardFooter className="flex flex-col sm:flex-row gap-2 mt-auto">
-                <Button variant="default">Visit</Button>
+                <Button variant="outline">
+                  <SquareArrowUpRight className="h-4 w-4" />
+                  Visit Website</Button>
                 <Link href={`/companies/${company.id}`} className="block hover:underline">
-                  <Button variant="outline">Details</Button>
+  
+                  <Button variant="default">
+                    <Eye className="h-4 w-4" />View Details</Button>
                 </Link>
                 
               </CardFooter>

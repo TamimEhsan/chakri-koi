@@ -26,9 +26,11 @@ export async function PUT(req, { params }) {
     if (!id) {
         return NextResponse.json({ error: 'ID is required' }, { status: 400 });
     }
+    // console.log('body', body.title, body.location, body.experience, body.link, id);
 
-    const query = `UPDATE public."job" SET title = $1, location = $2, experience = $3, tags = $4, content = $5 WHERE id = $6 RETURNING *`;
-    const values = [body.title, body.location, body.experience, body.tags, body.content, id];
+    // return NextResponse.json({ message: 'PUT request received' });
+    const query = `UPDATE public."job" SET title = $1, location = $2, experience = $3, link = $4, content = $5 WHERE id = $6 RETURNING *`;
+    const values = [body.title, body.location, body.experience, body.link, body.content, id];
     const { rows } = await pool.query(query, values);
     
     return NextResponse.json(rows);
