@@ -52,3 +52,12 @@ CREATE TABLE IF NOT EXISTS job (
     embeddings VECTOR,
     created_at TIMESTAMP DEFAULT now()
 );
+
+CREATE TABLE IF NOT EXISTS indexing (
+    id SERIAL PRIMARY KEY,
+    company_id INTEGER REFERENCES company(id),
+    page_link TEXT,
+    status INTEGER DEFAULT 0, -- 0: pending, 1: ok, 2: not ok
+    created_at TIMESTAMP DEFAULT now(),
+    updated_at TIMESTAMP DEFAULT now()
+);

@@ -23,8 +23,13 @@ export async function POST(req, { params }) {
 }
 
 async function reIndex(company) {
-    let query = `UPDATE public."company" SET indexing = true WHERE id = $1 AND indexing = false RETURNING *`;
+    console.log("Reindexing company", company.name);
+    let query = `DELETE FROM public."indexing" WHERE company_id = $1`;
     let values = [company.id];
+    await pool.query(query, values);
+
+    query = `UPDATE public."company" SET indexing = true WHERE id = $1 AND indexing = false RETURNING *`;
+    values = [company.id];
     let res = (await pool.query(query, values)).rows;
 
     if( !res || res.length === 0) {
@@ -54,11 +59,15 @@ async function reIndex(company) {
             }
             pagesToIndex.push(job);
             pagesToIndexMap.set(job, true);
+            let query = `INSERT INTO public."indexing" (company_id, page_link) VALUES ($1, $2) RETURNING *`;
+            let values = [company.id, job];
+            await pool.query(query, values);
         }
         pagesToIndexMap.set(pageLink, true);
         
     }
     console.log("Total pages to index", pagesToIndex.length); 
+    
     while( pagesToIndex.length > 0) {
         const pageLink = pagesToIndex.pop();
         const { page, error } = await fetchPage(pageLink);
@@ -71,6 +80,13 @@ async function reIndex(company) {
         if( jobData ) {
             jobData.link = pageLink;
             saveJob(jobData, company);
+            let query = `UPDATE public."indexing" SET status = 1 WHERE company_id = $1 AND page_link = $2`;
+            let values = [company.id, pageLink];
+            await pool.query(query, values);
+        } else {
+            let query = `UPDATE public."indexing" SET status = 2 WHERE company_id = $1 AND page_link = $2`;
+            let values = [company.id, pageLink];
+            await pool.query(query, values);
         }
     }
     console.log("Indexing complete");
@@ -95,11 +111,18 @@ async function fetchPage(url) {
 async function extractJobData(page , company) {
     const $ = cheerio.load(page);
     const title = $(company.title_selector).text();
-    const location = $(company.location_selector).text();
-    const experience = $(company.experience_selector).text();
+    let location = $(company.location_selector).text();
+    let experience = $(company.experience_selector).text();
     const content = $(company.content_selector).text();
-    if ( !title || !location || !experience || !content ) {
+    
+    if ( !title || !content ) {
         return null;
+    }
+    if ( !location ) {
+        location = "";
+    }
+    if ( !experience ) {
+        experience = "";
     }
     return { title, location, experience, content };
 }
@@ -122,7 +145,7 @@ async function getJobLinks(page, company) {
 }
 
 async function saveJob(job, company) {
-
+    
     let query = `SELECT * FROM public."job" WHERE link = $1`;
     let values = [job.link];
     let res = (await pool.query(query, values)).rows;
@@ -136,20 +159,20 @@ async function saveJob(job, company) {
     return rows;
 }
 
-export async function GET(req, { params }) {
-    const { id } = params;
-    const body = await req.json();
+// export async function GET(req, { params }) {
+//     const { id } = params;
+//     const body = await req.json();
 
-    if (!id) {
-        return NextResponse.json({ error: 'ID is required' }, { status: 400 });
-    }
+//     if (!id) {
+//         return NextResponse.json({ error: 'ID is required' }, { status: 400 });
+//     }
 
-    const query = `UPDATE public."company" SET name = $1, start_url = $2, base_url = $3, title_selector = $4, location_selector = $5, experience_selector = $6, content_selector = $7 WHERE id = $8 RETURNING *`;
-    const values = [body.name, body.start_url, body.base_url, body.title_selector, body.location_selector, body.experience_selector, body.content_selector, id];
-    const { rows } = await pool.query(query, values);
+//     const query = `UPDATE public."company" SET name = $1, start_url = $2, base_url = $3, title_selector = $4, location_selector = $5, experience_selector = $6, content_selector = $7 WHERE id = $8 RETURNING *`;
+//     const values = [body.name, body.start_url, body.base_url, body.title_selector, body.location_selector, body.experience_selector, body.content_selector, id];
+//     const { rows } = await pool.query(query, values);
     
-    return NextResponse.json(rows);
-}
+//     return NextResponse.json(rows);
+// }
 
 async function getEmbedding(content) {
     const response = await fetch('http://localhost:8000/encode', {
@@ -163,4 +186,30 @@ async function getEmbedding(content) {
     let embedding = data.embedding.join(',');
     embedding = `[${embedding}]`;
     return embedding;
+}
+
+
+export async function GET(req, { params }) {
+    const { id } = params;
+
+    // const body = await req.json();
+    let query = `SELECT * FROM public."company" WHERE id = $1`;
+    let values = [id];
+    let res = (await pool.query(query, values)).rows;
+    if ( !res || res.length === 0) {
+        return NextResponse.json({ error: `Company with ${id} not found` }, { status: 404 });
+    }
+    let data = {};
+    if( res[0].indexing === true) {
+        data.indexing = true;
+    } else {
+        data.indexing = false;
+    }
+
+    query = `SELECT * FROM public."indexing" WHERE company_id = $1 ORDER BY created_at DESC`;
+    values = [id];
+    res = (await pool.query(query, values)).rows;
+    console.log("habijabi", res.length);
+    data.pages = res;
+    return NextResponse.json(data);
 }

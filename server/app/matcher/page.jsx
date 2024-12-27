@@ -40,11 +40,11 @@ export default function Matcher() {
               <div className="space-y-2">
                 <div className="flex items-center space-x-2">
                   <Checkbox id="techcorp" />
-                  <Label htmlFor="techcorp">TechCorp</Label>
+                  <Label htmlFor="techcorp">Google</Label>
                 </div>
                 <div className="flex items-center space-x-2">
                   <Checkbox id="datainc" />
-                  <Label htmlFor="datainc">DataInc</Label>
+                  <Label htmlFor="datainc">Microsoft</Label>
                 </div>
               </div>
             </div>
@@ -54,11 +54,11 @@ export default function Matcher() {
               <div className="space-y-2">
                 <div className="flex items-center space-x-2">
                   <Checkbox id="johndoe" />
-                  <Label htmlFor="johndoe">John Doe</Label>
+                  <Label htmlFor="johndoe">Resume 1</Label>
                 </div>
                 <div className="flex items-center space-x-2">
                   <Checkbox id="janesmith" />
-                  <Label htmlFor="janesmith">Jane Smith</Label>
+                  <Label htmlFor="janesmith">Resume 2</Label>
                 </div>
               </div>
             </div>
