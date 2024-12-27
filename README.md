@@ -23,13 +23,13 @@ The software provides multiple features:
 
 ### 📈 Company 
 
-![](assets/screenshot-company-jobs.png)
+![](assets/screencapture-indexing.gif)
 
 - **Company Management:** Store crucial information about your next potential hiring company.
 - **Site Scraping:** With some guidance and templates, chakri koi will scrape the career websites for you and gather all the jobs in one place. However, scraping is a bit technical. So, you will need to add some preconfiguration for it. Luckily, there are some precofigured scrapping added for some companies!
 
 ### Job 
-
+![](assets/screenshot-company-jobs.png)
 - **Job Management:** You can add jobs under the company manually or let chakri koi scrap them for you.
 - **Vector Embedding:** Chakri koi will create and store a vector embedding of the jobs to better find a match for you!
 
